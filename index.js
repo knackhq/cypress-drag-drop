@@ -34,9 +34,9 @@ const DragSimulator = {
   drop() {
     return this.target.trigger('drop', { dataTransfer, force: this.force }).then(() => {
       if (isAttached(this.targetElement)) {
-        this.target.trigger('mouseup', { which: 1, button: 0, force: this.force }).then(() => {
+        this.target.trigger('mouseup', { which: 1, button: 0, force: true }).then(() => {
           if (isAttached(this.targetElement)) {
-            this.target.trigger('pointerup', { which: 1, button: 0, force: this.force })
+            this.target.trigger('pointerup', { which: 1, button: 0, force: true })
           }
         })
       }
